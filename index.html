@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VUE</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+</head>
+<body style="background-color:  #40E0D0; margin-top: 50px;">
+
+<div id="app">
+    <div class="container">
+        <div class="row">
+            <div class="col-md 3">
+                <img v-bind:src="image1" alt="" width="400px">
+            </div>
+            <div class="col-md 3">
+                <h1>{{message}}</h1>
+                <!-- IF operatoru  -->
+                <h2 v-if="beautiful">Flowers beautiful</h2>
+                <h4 v-else>Flowers not beautiful</h4>
+                <!-- FOR operatoru -->
+                <h6 v-for="item in datails">{{item}}</h6>
+                <hr>
+                <div v-for="item in variants" style="color: red">
+                    <h3 @mouseover="updateImage(item.imageVariant)">
+                        {{item.variant}}
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/vue.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
